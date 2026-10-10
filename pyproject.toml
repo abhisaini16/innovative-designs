@@ -1,0 +1,18 @@
+[project]
+name = "scan2cad"
+version = "0.1.0"
+description = "Turn a phone 3D scan into measurements, an editable parametric CAD model and a support-ready 3D print"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "trimesh", "rtree", "networkx", "cadquery", "lxml", "fast-simplification"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+scan2cad = "scan2cad.cli:main"
+
+[tool.setuptools]
+packages = ["scan2cad"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
